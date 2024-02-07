@@ -9,6 +9,7 @@ const phrases = [
   "Stinky, You Sure?",
   "I'm Gonna Cry... ;(",
   "You're Breaking My Heart",
+  "Press this if you hate sunflowers 🌻",
 ];
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
   }
 
   function getNoButtonText() {
-    return phrases[Math.min(noCount, phrases.length - 1)];
+    const index = Math.min(noCount, phrases.length - 1);
+    return phrases[index];
   }
 
   return (
@@ -44,7 +46,7 @@ function App() {
             height="439"
             alt="Valentine's Day gif"
           />
-          <div className="text">Will you be my valentine?</div>
+          <div className="text">Will you be my valentines?</div>
           <div>
             <button
               className="yesButton"
@@ -53,11 +55,7 @@ function App() {
             >
               Yes
             </button>
-            <button
-              className="noButton"
-              onClick={handleNoClick}
-              style={{ fontSize: yesButtonSize }}
-            >
+            <button className="noButton" onClick={handleNoClick}>
               {getNoButtonText()}
             </button>
           </div>
