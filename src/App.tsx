@@ -10,6 +10,7 @@ const phrases = [
   "I'm Gonna Cry... ;(",
   "You're Breaking My Heart",
   "Press this if you hate sunflowers 🌻",
+  "Press yes.",
 ];
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
   }
 
   function getNoButtonText() {
-    const index = Math.min(noCount, phrases.length - 1);
+    const index = noCount % phrases.length;
     return phrases[index];
   }
 
